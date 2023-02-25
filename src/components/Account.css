@@ -1,0 +1,39 @@
+.footer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 5px;
+    place-items: end;
+}
+
+.modal-content{
+    background-color: #184d59!important;
+    width: 85% !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    justify-self: center !important;
+    align-self: center !important;
+}
+
+.modal-title{
+    color: azure;
+}
+
+.modal-header{
+    width: 100%;
+}
+
+.modal-body{
+    background-color: #184d59 !important;
+    color: azure !important;
+    width: 97% !important;;
+}
+
+.btn-close{
+    background: transparent url("") center/1em auto no-repeat !important;
+}
+
+.account-modal{
+    justify-content: center;
+}

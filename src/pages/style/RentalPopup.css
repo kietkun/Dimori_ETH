@@ -1,0 +1,111 @@
+.topBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.lrContainers {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.line {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  margin: 40px 0;
+}
+
+.removeRentalContent {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.removeContent {
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+p {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+button {
+  margin-top: 40px;
+  padding: 10px 20px;
+}
+
+.btn-outline-secondary {
+  color: wheat;
+  background-color: transparent;
+  background-image: none;
+  border-color: wheat;
+}
+.btn-outline-secondary:hover {
+  color: rgb(255, 255, 255);
+  background-color: wheat;
+  border-color: wheat;
+}
+
+.btn-outline-dark {
+  color: rgb(106, 195, 222);
+  background-color: transparent;
+  background-image: none;
+  border-color: rgb(106, 195, 222);
+}
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: rgb(106, 195, 222);
+  border-color: rgb(106, 195, 222);
+}
+
+.label {
+  color: azure;
+  font-weight: bold;
+}
+
+.labelDetail {
+  color: azure;
+}
+
+.price-pop {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  color: bisque;
+  font-size: 12px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.buttonContainerCenter {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding: 20px;
+}
+.buttonContainerEnd {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  padding: 20px;
+}
+.rentalDetail {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detailImg {
+  margin-top: -10px;
+  padding: 10px;
+}
