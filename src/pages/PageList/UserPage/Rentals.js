@@ -10,9 +10,7 @@ import Rental from "../../Page/UserPage/Rental";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import {
-  TextField
-} from "@mui/material";
+import { TextField } from "@mui/material";
 import DimoriSmartContract from "../../../artifacts/contracts/DimoriMain.sol/DimoriMain.json";
 import { contractAddress } from "../../../utils/contracts-config";
 
@@ -24,7 +22,7 @@ const Rentals = () => {
     destination: searchFilters.destination,
     checkIn: new Date(searchFilters.checkIn.getTime()),
     checkOut: new Date(searchFilters.checkOut.getTime()),
-    theme: searchFilters.theme
+    theme: searchFilters.theme,
   });
 
   const getInitialState = () => {
@@ -61,9 +59,7 @@ const Rentals = () => {
 
     const matchedItems = items.filter(
       (p) =>
-        p.city
-          .toLowerCase()
-          .includes(info.destination.toLowerCase()) &&
+        p.city.toLowerCase().includes(info.destination.toLowerCase()) &&
         p.theme.toLowerCase().includes(info.theme.toLowerCase())
     );
     setRentalsList(matchedItems);
@@ -86,36 +82,54 @@ const Rentals = () => {
             ></img>
           </Link>
         </div>
-        <div className="datetimepicker">
-            <div className="inputs">
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DesktopDatePicker
-                  inputFormat="dd/MM/yyyy"
-                  value={info.checkIn}
-                  onChange={(newValue) => {
-                    setInfo({ ...info, checkIn: newValue });
-                  }}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
-            </div>
-
-            <div className="vl" />
-            <div className="inputs">
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DesktopDatePicker
-                  inputFormat="dd/MM/yyyy"
-                  value={info.checkOut}
-                  onChange={(newValue) => {
-                    setInfo({ ...info, checkOut: newValue });
-                  }}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
-            </div>
+        <div className="searchReminder">
+          <div className="inputs">
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DesktopDatePicker
+                inputFormat="dd/MM/yyyy"
+                value={info.checkIn}
+                onChange={(newValue) => {
+                  setInfo({ ...info, checkIn: newValue });
+                }}
+                renderInput={(params) => (
+                  <TextField
+                  variant="standard"
+                    {...params}
+                    sx={{
+                      svg: { color: "azure" },
+                      input: { color: "azure" },
+                    }}
+                  />
+                )}
+              />
+            </LocalizationProvider>
           </div>
+
+          <div className="vl" />
+          <div className="inputs">
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DesktopDatePicker
+                inputFormat="dd/MM/yyyy"
+                value={info.checkOut}
+                onChange={(newValue) => {
+                  setInfo({ ...info, checkOut: newValue });
+                }}
+                renderInput={(params) => (
+                  <TextField
+                    variant="standard"
+                    {...params}
+                    sx={{
+                      svg: { color: "azure" },
+                      input: { color: "azure" },
+                    }}
+                  />
+                )}
+              />
+            </LocalizationProvider>
+          </div>
+        </div>
         <div className="lrContainers">
-          <Account  />
+          <Account />
         </div>
       </div>
       <hr className="line" />

@@ -130,8 +130,7 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
           </div>
         </div>
         <div className="buttonContainerEnd">
-        <div className="price-pop">
-            Stay Duration :{" "}
+          <div className="price-pop">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DesktopDatePicker
                 inputFormat="dd/MM/yyyy"
@@ -139,7 +138,17 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
                 onChange={(newValue) => {
                   setInfo({ ...info, checkIn: newValue });
                 }}
-                renderInput={(params) => <TextField {...params} />}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    sx={{
+                      svg: { color: "azure" },
+                      input: { color: "azure" },
+                      width: '150px',
+                      height: '30px',
+                    }}
+                  />
+                )}
               />
             </LocalizationProvider>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -149,7 +158,17 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
                 onChange={(newValue) => {
                   setInfo({ ...info, checkOut: newValue });
                 }}
-                renderInput={(params) => <TextField {...params} />}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    sx={{
+                      svg: { color: "azure" },
+                      input: { color: "azure" },
+                      width: '150px',
+                      height: '30px'
+                    }}
+                  />
+                )}
               />
             </LocalizationProvider>
           </div>
