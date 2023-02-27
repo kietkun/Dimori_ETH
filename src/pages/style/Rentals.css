@@ -1,6 +1,6 @@
 .searchReminder {
   width: 450px !important;
-  border: 1.5px solid rgb(242, 242, 242);
+  border: 1.5px solid rgb(200, 200, 200, 0.2);
   border-radius: 100px;
   height: 45px;
   display: flex;
@@ -8,19 +8,19 @@
   align-items: center !important;
   padding-left: 30px;
   padding-right: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  color: rgb(162, 227, 227);
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+  color: #00aed0;
 }
 
 .filter {
   font-size: 14px;
   font-weight: 500;
   margin-right: 20px;
-  color: azure;
+  color: #00aed0;
 }
 
 .searchFiltersIcon {
-  background-color: #00afd1;
+  background-color: #00aed0;
   padding: 7px;
   border-radius: 50%;
 }
@@ -44,9 +44,9 @@ body {
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-  background-color: #00afd1 !important;
-  color: #2b2623 !important;
-  border-color: #2b2623 !important;
+  background-color: #00aed0 !important;
+  color: #fff !important;
+  border-color: #fff !important;
   font-weight: bold !important;
   line-height: 1.5 !important;
   border: 1px solid transparent !important;
@@ -61,12 +61,12 @@ body {
 }
 
 .line {
-  border-top: 1px solid rgb(53, 49, 49);
+  border-top: 1px solid rgb(0, 0, 0);
   margin: 0%;
 }
 
 .line2 {
-  border-top: 1px solid rgb(53, 49, 49);
+  border-top: 1px solid rgb(0, 0, 0);
   margin-bottom: 0px;
 }
 
@@ -122,12 +122,12 @@ body {
   font-family: "ui-monospace";
   font-size: 23px;
   margin-bottom: 15px;
-  color: 00afd1;
+  color: #00aed0;
 }
 
 .rentalDesc {
   font-size: 15px;
-  color: #2b2623;
+  color: #00aed0;
   padding: 1% 5% 0 5%;
 }
 
@@ -144,6 +144,6 @@ body {
   display: flex;
   justify-content: end;
   gap: 10px;
-  color: bisque;
+  color: #00aed0;
   font-size: 12px;
 }

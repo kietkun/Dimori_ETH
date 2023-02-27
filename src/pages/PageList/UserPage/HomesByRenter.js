@@ -76,7 +76,7 @@ const HomesByRenter = () => {
             <div className="vl" />
             <div className="filter">{searchFilters.theme} Theme</div>
             <div className="searchFiltersIcon">
-              <SearchIcon sx={{ color: "#2b2623" }} />
+              <SearchIcon sx={{ color: "#fff" }} />
             </div>
           </div>
         </a>

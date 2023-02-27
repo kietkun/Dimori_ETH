@@ -125,7 +125,7 @@ const Home = () => {
                 }}
               >
                 <div className="searchButton">
-                  <SearchIcon sx={{ color: "#2b2623" }} />
+                  <SearchIcon sx={{ color: "#fff" }} />
                 </div>
               </Link>
             ) : (
@@ -137,7 +137,7 @@ const Home = () => {
                   );
                 }}
               >
-                <SearchIcon sx={{ color: "#2b2623" }} />
+                <SearchIcon sx={{ color: "#fff" }} />
               </div>
             )}
           </div>

@@ -142,8 +142,8 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
                   <TextField
                     {...params}
                     sx={{
-                      svg: { color: "azure" },
-                      input: { color: "azure" },
+                      svg: { color: "#00aed0" },
+                      input: { color: "#00aed0" },
                       width: '150px',
                       height: '30px',
                     }}
@@ -162,8 +162,8 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
                   <TextField
                     {...params}
                     sx={{
-                      svg: { color: "azure" },
-                      input: { color: "azure" },
+                      svg: { color: "#00aed0" },
+                      input: { color: "#00aed0" },
                       width: '150px',
                       height: '30px'
                     }}
@@ -174,7 +174,7 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
           </div>
           <Button
             variant="contained"
-            style={{ backgroundColor: "#00afd1" }}
+            style={{ backgroundColor: "#00aed0" }}
             onClick={() => {
               bookProperty(rentalInfo.id, rentalInfo.price);
             }}

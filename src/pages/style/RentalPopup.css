@@ -12,14 +12,15 @@
 
 .line {
   border: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000;
   margin: 40px 0;
 }
 
 .removeRentalContent {
   width: 100%;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(200, 200, 200, 0.4);
+  border-radius: 2%;
 }
 
 .removeContent {
@@ -53,31 +54,52 @@ button {
 }
 
 .btn-outline-dark {
-  color: rgb(106, 195, 222);
+  color: #00aed0;
   background-color: transparent;
   background-image: none;
-  border-color: rgb(106, 195, 222);
+  border-color: #00aed0;
 }
 .btn-outline-dark:hover {
   color: #fff;
-  background-color: rgb(106, 195, 222);
-  border-color: rgb(106, 195, 222);
+  background-color: #00aed0;
+  border-color: #00aed0;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #00aed0 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  font-weight: bold !important;
+  line-height: 1.5 !important;
+  border: 1px solid transparent !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  border-radius: 0.25rem !important;
+  display: inline-block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
 }
 
 .label {
-  color: azure;
+  color: #00aed0;
   font-weight: bold;
 }
 
 .labelDetail {
-  color: azure;
+  color: #00aed0;
 }
 
 .price-pop {
   display: flex;
   justify-content: end;
   gap: 10px;
-  color: bisque;
+  color: #00aed0;
   font-size: 12px;
   padding-right: 20px;
   padding-bottom: 10px;
@@ -99,7 +121,7 @@ button {
 .rentalDetail {
   width: 80%;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(200, 200, 200, 0.2);
   padding: 10px;
   display: flex;
   align-items: center;

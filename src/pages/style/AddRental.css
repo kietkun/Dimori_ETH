@@ -8,7 +8,7 @@
   align-items: center;
   padding-left: 30px;
   padding-right: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 }
 
 .marginTable {
@@ -24,7 +24,7 @@
 .headerText {
   text-align: center;
   font-family: "Roboto, Helvetica, sans-serif";
-  color: 00afd1;
+  color: #00aed0;
 }
 
 body {
@@ -32,7 +32,7 @@ body {
 }
 
 .searchFiltersIcon {
-  background-color: #00afd1;
+  background-color: #00aed0;
   padding: 7px;
   border-radius: 50%;
 }
@@ -42,9 +42,9 @@ body {
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-  background-color: #00afd1 !important;
-  color: #2b2623 !important;
-  border-color: #2b2623 !important;
+  background-color: #00aed0 !important;
+  color: #fff !important;
+  border-color: #fff !important;
   font-weight: bold !important;
   line-height: 1.5 !important;
   border: 1px solid transparent !important;
@@ -93,7 +93,7 @@ body {
 .rentalDiv {
   display: flex;
   justify-content: space-around;
-  color: whitesmoke;
+  color: #00aed0;
 }
 
 .rentalDivH {
@@ -126,7 +126,7 @@ body {
 }
 
 .rentalDesc {
-  color: gray;
+  color: #00aed0;
 }
 
 .bottomButton {
@@ -140,35 +140,27 @@ body {
   display: flex;
   justify-content: end;
   gap: 5px;
-  color: #808080;
+  color: #00aed0;
   font-size: 12px;
 }
 
 .form-control.standard {
-  background-color: white;
-  color: wheat;
-}
-
-.MuiInput-underline:before {
-  border-bottom-color: blue;
-}
-
-.MuiFormLabel-root.Mui-focused {
-  color: blue;
+  background-color: #fff;
+  color: #00aed0;
 }
 .MuiInputLabel-root {
-  color: white;
+  color: #fff;
 }
 
 .form-control {
   width: 100% !important;
-  background: rgba(0, 0, 0, 0.35) !important;
-  color: bisque !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  color: #00aed0 !important;
   border-radius: 25px !important;
   border: none !important;
 }
 
 .form-control::placeholder {
   opacity: 0.9 !important;
-  color: azure !important;
+  color: #a1eded !important;
 }

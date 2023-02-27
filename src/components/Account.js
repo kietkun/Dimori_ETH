@@ -82,7 +82,11 @@ function Account() {
     <div>
       {isConnected ? (
         <>
-          <Button variant="contained" color="primary" onClick={handleShow}>
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={handleShow}
+            style={{ backgroundColor: "#00aed0 !important" }}>
             {data.account &&
               `${data.account.slice(0, 6)}...${data.account.slice(
                 data.account.length - 4,

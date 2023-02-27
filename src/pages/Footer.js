@@ -11,7 +11,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footerDiv">
-      <table style={{ color: "azure" }}>
+      <table style={{ color: "#00aed0" }}>
         <tr>
           <td>
             <Copyright /> Dimori

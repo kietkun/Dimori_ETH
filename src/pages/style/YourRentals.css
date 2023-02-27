@@ -1,7 +1,7 @@
 .headerText {
   text-align: center;
   font-family: "Roboto, Helvetica, sans-serif";
-  color: #00afd1;
+  color: #00aed0;
 }
 
 .searchReminder {
@@ -14,7 +14,7 @@
   align-items: center;
   padding-left: 30px;
   padding-right: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 .filter {
@@ -24,7 +24,7 @@
 }
 
 .searchFiltersIcon {
-  background-color: #00afd1;
+  background-color: #00aed0;
   padding: 7px;
   border-radius: 50%;
 }
@@ -35,8 +35,8 @@
 .btn-primary:visited,
 .btn-primary:focus {
   background-color: #00afd1 !important;
-  color: #2b2623 !important;
-  border-color: #2b2623 !important;
+  color: #fff !important;
+  border-color: #fff !important;
   font-weight: bold !important;
   line-height: 1.5 !important;
   border: 1px solid transparent !important;
@@ -103,7 +103,7 @@
 }
 
 .itemDiv {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(200, 200, 200, 0.2);
   box-shadow: rgba(0, 0, 0, 0.6) 7px 21px 21px;
   border-radius: 15px;
 }
@@ -131,19 +131,19 @@
 .rentalTitle {
   font-size: 27px;
   font-family: "ui-monospace";
-  color: azure;
+  color: #00aed0;
 }
 
 .rentalInformation {
   font-size: 18px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(200, 200, 200, 0.2);
   box-shadow: rgba(0, 0, 0, 1) 5px 15px 15px;
-  color: azure;
+  color: #00aed0;
   border-radius: 10px;
 }
 
 .rentalDesc {
-  color: azure;
+  color: #00aed0;
   padding: 1% 5% 0 5%;
 }
 
@@ -163,7 +163,7 @@
   display: flex;
   justify-content: end;
   gap: 5px;
-  color: bisque;
+  color: #00aed0;
   font-size: 12px;
 }
 
@@ -178,13 +178,13 @@
 } */
 
 .text {
-  color: #00afd1;
+  color: #00aed0;
   font-weight: 600;
   margin-bottom: 25px;
 }
 
 .title {
-  color: #00afd1;
+  color: #00aed0;
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 15px;
@@ -210,7 +210,7 @@ body {
   display: "flex";
   background-size: cover;
   background-attachment: fixed;
-  background-color: #184d59;
+  background-color: #fff;
   height: 100%;
 }
 

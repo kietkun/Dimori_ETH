@@ -95,7 +95,7 @@ const UserCancelledBookings = () => {
           <RentalsMap
             locations={coordinates}
             setHighLight={setHighLight}
-            style={{ border: "2px dotted azure" }}
+            style={{ border: "2px dotted #a1eded" }}
           />
         </div>
         <div className="rentalsContentR">

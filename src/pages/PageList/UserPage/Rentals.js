@@ -96,8 +96,8 @@ const Rentals = () => {
                   variant="standard"
                     {...params}
                     sx={{
-                      svg: { color: "azure" },
-                      input: { color: "azure" },
+                      svg: { color: "#00aed0" },
+                      input: { color: "#00aed0" },
                     }}
                   />
                 )}
@@ -119,8 +119,8 @@ const Rentals = () => {
                     variant="standard"
                     {...params}
                     sx={{
-                      svg: { color: "azure" },
-                      input: { color: "azure" },
+                      svg: { color: "#00aed0" },
+                      input: { color: "#00aed0" },
                     }}
                   />
                 )}

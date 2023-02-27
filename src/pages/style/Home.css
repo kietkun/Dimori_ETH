@@ -12,8 +12,8 @@
 .line1 {
   height: 100px;
   border-width: 21px;
-  color: gray;
-  background-color: gray;
+  color: #000;
+  background-color: #000;
 }
 .containerGradinet {
   background-image: linear-gradient(rgb(0, 0, 0, 0.75), rgb(0, 0, 0, 0));
@@ -50,7 +50,7 @@
 
 .searchFields {
   width: 800px;
-  background-color: white;
+  background-color: #fff;
   height: 70px;
   border-radius: 100px;
   display: flex;
@@ -59,12 +59,12 @@
   padding-left: 30px;
   top: 5% !important;
   bottom: 10px !important;
-  box-shadow: rgba(0, 0, 0, 1) 5px 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.6) 5px 15px 15px;
 }
 
 .datetimepicker{
   width: 400px;
-  background-color: white;
+  background-color: #fff;
   height: 70px;
   border-radius: 100px;
   display: flex;
@@ -73,11 +73,11 @@
   padding-left: 30px;
   top: 5% !important;
   bottom: 10px !important;
-  box-shadow: rgba(0, 0, 0, 1) 5px 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.6) 5px 15px 15px;
 }
 
 .tabs {
-  color: white;
+  color: #fff;
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -87,7 +87,7 @@
 
 .selected {
   padding-bottom: 5px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #fff;
 }
 
 .inputs {
@@ -109,7 +109,7 @@
 }
 
 .searchButton {
-  background-color: #00afd1;
+  background-color: #00aed0;
   padding: 10px;
   border-radius: 50%;
   transition: transform 0.4s;
@@ -122,7 +122,7 @@
 
 .randomLocation {
   margin-top: 25vh;
-  color: white;
+  color: #fff;
   width: 500px;
   padding-left: 100px;
   position: fixed;
