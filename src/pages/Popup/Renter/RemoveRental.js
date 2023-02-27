@@ -89,9 +89,9 @@ const RemoveRental = ({ rental }) => {
 
   return (
     <>
-      <div className="removeRentalContent row">
+      <div className="popupRentalContent row">
         <div className="row">
-          <div className="removeContent col-7">
+          <div className="popupContent col-7">
             <table
               className="pure-table pure-table-horizontal"
               style={{ display: "flex", justifyContent: "center" }}

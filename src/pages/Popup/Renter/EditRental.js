@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "../../style/EditRental.css";
+import "../../style/RentalPopup.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import { ethers, utils } from "ethers";
@@ -73,7 +73,7 @@ const EditRental = ({ rental }) => {
   const data = useSelector((state) => state.blockchain.value);
   const [loading, setLoading] = useState(false);
 
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(rental.imgUrl);
   const [imagePreview, setImagePreview] = useState(null);
 
   const [formInput, setFormInput] = useState({
@@ -158,205 +158,224 @@ const EditRental = ({ rental }) => {
 
   return (
     <>
-      <div className="RentalContent editRentalContent row">
-        <div className="col-7">
-          <table className="pure-table pure-table-horizontal marginTable">
-            <tr>
-              <td>
-                <Form.Control
-                  type="text"
-                  className="formControlStyles"
-                  value={formInput.name}
-                  placeholder="Tên chi? (Name)"
-                  onChange={(e) => {
-                    setFormInput({ ...formInput, name: e.target.value });
-                  }}
-                  required={true}
-                />
-              </td>
-              <td>
-                <Form.Control
-                  type="text"
-                  className="formControlStyles"
-                  value={formInput.city}
-                  maxLength={30}
-                  placeholder="Ở mô? (City)"
-                  onChange={(e) => {
-                    setFormInput({ ...formInput, city: e.target.value });
-                  }}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <CustomFormControl
-                  variant="standard"
-                  sx={{ m: 1, minWidth: 600 }}
-                >
-                  <InputLabel id="theme-standard-label" style={{ width: 350 }}>
-                    Tụi bây có chi vui (Theme)
-                  </InputLabel>
-                  <Select
-                    value={value}
-                    onChange={(e) => {
-                      setValue(e.target.value);
-                    }}
-                    required
-                  >
-                    <MenuItem value="Peace">Peace</MenuItem>
-                    <MenuItem value="Village">Village</MenuItem>
-                    <MenuItem value="Royal">Royal</MenuItem>
-                    <MenuItem value="Nature">Nature</MenuItem>
-                    <MenuItem value="Arts">Arts</MenuItem>
-                    <MenuItem value="Green">Green</MenuItem>
-                    <MenuItem value="History">History</MenuItem>
-                  </Select>
-                </CustomFormControl>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <Form.Control
-                  type="text"
-                  className="formControlStyles"
-                  value={formInput.contactAddress}
-                  maxLength={255}
-                  placeholder="Ở lộ mô? (Address)"
-                  onChange={(e) => {
-                    setFormInput({
-                      ...formInput,
-                      contactAddress: e.target.value,
-                    });
-                  }}
-                  required
-                />
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <Form.Control
-                  type="text"
-                  className="formControlStyles"
-                  maxLength={30}
-                  value={formInput.latitude}
-                  placeholder="Kinh độ (Latitude)"
-                  onChange={(e) => {
-                    setFormInput({
-                      ...formInput,
-                      latitude: e.target.value,
-                    });
-                  }}
-                />
-              </td>
-              <td>
-                <Form.Control
-                  type="text"
-                  className="formControlStyles"
-                  maxLength={30}
-                  value={formInput.longitude}
-                  placeholder="Vĩ độ (Longtitude)"
-                  onChange={(e) => {
-                    setFormInput({
-                      ...formInput,
-                      longitude: e.target.value,
-                    });
-                  }}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <Form.Control
-                  as="textarea"
-                  className="formControlStyles"
-                  value={formInput.description}
-                  rows={5}
-                  maxLength={2000}
-                  placeholder="Kể coi tụi bây có chi? (Description)"
-                  onChange={(e) => {
-                    setFormInput({
-                      ...formInput,
-                      description: e.target.value,
-                    });
-                  }}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Form.Control
-                  type="number"
-                  className="formControlStyles"
-                  value={formInput.numberGuests}
-                  min={1}
-                  placeholder="Chỗ tụi bây chứa được mấy người? (Max number)"
-                  onChange={(e) =>
-                    setFormInput({
-                      ...formInput,
-                      numberGuests: Number(e.target.value),
-                    })
-                  }
-                />
-              </td>
-              <td>
-                <Form.Control
-                  style={{ width: "100%" }}
-                  type="number"
-                  className="formControlStyles"
-                  min={0}
-                  value={formInput.pricePerDay}
-                  placeholder="Một ngày trả bây mấy $ (Price)"
-                  onChange={(e) =>
-                    setFormInput({
-                      ...formInput,
-                      pricePerDay: e.target.value,
-                    })
-                  }
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div className="col-4">
-          <table className="pure-table pure-table-horizontal marginTable">
-            <tr>
-              <td>
-                <Form.Control
-                  type="file"
-                  className="formControlStyles"
-                  name="file"
-                  onChange={(e) => {
-                    getImage(e);
-                  }}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                {imagePreview == null ? (
-                  <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img
-                      className="rounded mt-4"
-                      width="350"
-                      src={rental.imgUrl}
-                      style={{ margin: "0 15% 0 15%", display: "block" }}
+      <div className="popupRentalContent row">
+        <div className="row">
+          <div className="popupContent col-8">
+            <table
+              className="pure-table pure-table-horizontal"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <Form.Control
+                      type="text"
+                      className="formControlStyles"
+                      value={formInput.name}
+                      placeholder="Tên chi? (Name)"
+                      onChange={(e) => {
+                        setFormInput({ ...formInput, name: e.target.value });
+                      }}
+                      required={true}
                     />
-                  </div>
-                ) : (
-                  <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img
-                      className="rounded mt-4"
-                      width="350"
-                      src={URL.createObjectURL(imagePreview)}
-                      style={{ margin: "0 15% 0 15%", display: "block" }}
+                  </td>
+                  <td>
+                    <Form.Control
+                      type="text"
+                      className="formControlStyles"
+                      value={formInput.city}
+                      maxLength={30}
+                      placeholder="Ở mô? (City)"
+                      onChange={(e) => {
+                        setFormInput({ ...formInput, city: e.target.value });
+                      }}
+                      required
                     />
-                  </div>
-                )}
-              </td>
-            </tr>
-          </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={2}>
+                    <CustomFormControl
+                      variant="standard"
+                      sx={{ m: 1, minWidth: 600 }}
+                    >
+                      <InputLabel
+                        id="theme-standard-label"
+                        style={{ width: 350 }}
+                      >
+                        Tụi bây có chi vui (Theme)
+                      </InputLabel>
+                      <Select
+                        value={value}
+                        onChange={(e) => {
+                          setValue(e.target.value);
+                        }}
+                        required
+                      >
+                        <MenuItem value="Peace">Peace</MenuItem>
+                        <MenuItem value="Village">Village</MenuItem>
+                        <MenuItem value="Royal">Royal</MenuItem>
+                        <MenuItem value="Nature">Nature</MenuItem>
+                        <MenuItem value="Arts">Arts</MenuItem>
+                        <MenuItem value="Green">Green</MenuItem>
+                        <MenuItem value="History">History</MenuItem>
+                      </Select>
+                    </CustomFormControl>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={2}>
+                    <Form.Control
+                      type="text"
+                      className="formControlStyles"
+                      value={formInput.contactAddress}
+                      maxLength={255}
+                      placeholder="Ở lộ mô? (Address)"
+                      onChange={(e) => {
+                        setFormInput({
+                          ...formInput,
+                          contactAddress: e.target.value,
+                        });
+                      }}
+                      required
+                    />
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <Form.Control
+                      type="text"
+                      className="formControlStyles"
+                      maxLength={30}
+                      value={formInput.latitude}
+                      placeholder="Kinh độ (Latitude)"
+                      onChange={(e) => {
+                        setFormInput({
+                          ...formInput,
+                          latitude: e.target.value,
+                        });
+                      }}
+                    />
+                  </td>
+                  <td>
+                    <Form.Control
+                      type="text"
+                      className="formControlStyles"
+                      maxLength={30}
+                      value={formInput.longitude}
+                      placeholder="Vĩ độ (Longtitude)"
+                      onChange={(e) => {
+                        setFormInput({
+                          ...formInput,
+                          longitude: e.target.value,
+                        });
+                      }}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={2}>
+                    <Form.Control
+                      as="textarea"
+                      className="formControlStyles"
+                      value={formInput.description}
+                      rows={5}
+                      maxLength={2000}
+                      placeholder="Kể coi tụi bây có chi? (Description)"
+                      onChange={(e) => {
+                        setFormInput({
+                          ...formInput,
+                          description: e.target.value,
+                        });
+                      }}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Form.Control
+                      type="number"
+                      className="formControlStyles"
+                      value={formInput.numberGuests}
+                      min={1}
+                      placeholder="Chỗ tụi bây chứa được mấy người? (Max number)"
+                      onChange={(e) =>
+                        setFormInput({
+                          ...formInput,
+                          numberGuests: Number(e.target.value),
+                        })
+                      }
+                    />
+                  </td>
+                  <td>
+                    <Form.Control
+                      style={{ width: "100%" }}
+                      type="number"
+                      className="formControlStyles"
+                      min={0}
+                      value={formInput.pricePerDay}
+                      placeholder="Một ngày trả bây mấy $ (Price)"
+                      onChange={(e) =>
+                        setFormInput({
+                          ...formInput,
+                          pricePerDay: e.target.value,
+                        })
+                      }
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="col-4 detailImg">
+            <table
+              className="pure-table pure-table-horizontal"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <Form.Control
+                      type="file"
+                      className="formControlStyles"
+                      name="file"
+                      onChange={(e) => {
+                        getImage(e);
+                      }}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {imagePreview == null ? (
+                      <div
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <img
+                          className="rounded mt-4"
+                          width="350"
+                          src={rental.imgUrl}
+                          style={{ margin: "0 15% 0 15%", display: "block" }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <img
+                          className="rounded mt-4"
+                          width="350"
+                          src={URL.createObjectURL(imagePreview)}
+                          style={{ margin: "0 15% 0 15%", display: "block" }}
+                        />
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="buttonContainerCenter">
           <Button

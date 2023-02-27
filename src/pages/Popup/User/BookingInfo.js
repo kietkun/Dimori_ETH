@@ -81,7 +81,7 @@ const BookingInfo = ({ rentalInfo, bookingInfo }) => {
 
   return (
     <>
-      <div className="removeRentalContent">
+      <div className="popupRentalContent">
         <div className="row">
           <div className="col-6">
             <table

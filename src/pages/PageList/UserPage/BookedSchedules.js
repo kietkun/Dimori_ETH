@@ -81,6 +81,9 @@ const BookedSchedules = () => {
             ></img>
           </Link>
         </div>
+        <div>
+          <h2 className="headerText">Your Booked Schedules</h2>
+        </div>
         <div className="lrContainers">
           <Account  />
         </div>
@@ -121,7 +124,7 @@ const BookedSchedules = () => {
                 color: "InactiveCaptionText",
               }}
             >
-              <p style={{ color: "whitesmoke" }}>You have no reservation yet</p>
+              <p style={{ color: "#00aed0" }}>You have no reservation yet</p>
             </div>
           )}
         </div>

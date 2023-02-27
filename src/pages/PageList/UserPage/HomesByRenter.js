@@ -112,7 +112,7 @@ const HomesByRenter = () => {
                 paddingBottom: "10%",
               }}
             >
-              <p style={{ color: "whitesmoke" }}>
+              <p style={{ color: "#00aed0" }}>
                 No rentals found for your search
               </p>
             </div>

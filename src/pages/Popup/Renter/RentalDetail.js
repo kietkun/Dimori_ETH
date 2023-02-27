@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.css";
 const RentalDetail = ({ rental }) => {
   return (
     <>
-      <div className="removeRentalContent">
-        <div className="removeContent">
+      <div className="popupRentalContent">
+        <div className="popupContent">
           <div className="row">
             <div className="col-7">
               <table

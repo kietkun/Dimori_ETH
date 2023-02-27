@@ -179,7 +179,7 @@ const RenterCancelledBookings = () => {
                 color: "burlywood",
               }}
             >
-              <p style={{ color: "whitesmoke" }}>You have no reservation yet</p>
+              <p style={{ color: "#00aed0" }}>You have no reservation yet</p>
             </div>
           )}
         </div>

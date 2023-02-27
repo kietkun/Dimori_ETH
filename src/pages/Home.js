@@ -59,6 +59,10 @@ const Home = () => {
                 onChange={(e) => {
                   setInfo({ ...info, destination: e.target.value });
                 }}
+                sx={{
+                  svg: { color: "#00aed0" },
+                  input: { color: "#00aed0" },
+                }}
               />
             </div>
             <div className="vl" />
@@ -70,7 +74,15 @@ const Home = () => {
                   onChange={(newValue) => {
                     setInfo({ ...info, checkIn: newValue });
                   }}
-                  renderInput={(params) => <TextField {...params} />}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      sx={{
+                        svg: { color: "#00aed0" },
+                        input: { color: "#00aed0" },
+                      }}
+                    />
+                  )}
                 />
               </LocalizationProvider>
             </div>
@@ -84,14 +96,30 @@ const Home = () => {
                   onChange={(newValue) => {
                     setInfo({ ...info, checkOut: newValue });
                   }}
-                  renderInput={(params) => <TextField {...params} />}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      sx={{
+                        svg: { color: "#00aed0" },
+                        input: { color: "#00aed0" },
+                      }}
+                    />
+                  )}
                 />
               </LocalizationProvider>
             </div>
 
             <div className="vl" />
             <div className="inputs">
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+              <FormControl
+                variant="standard"
+                sx={{
+                  m: 1,
+                  minWidth: 120,
+                  svg: { color: "#00aed0" },
+                  input: { color: "#00aed0" },
+                }}
+              >
                 <InputLabel id="theme-standard-label">Theme</InputLabel>
                 <Select
                   labelId="theme-standard-label"

@@ -21,7 +21,10 @@ import logo from "../../../images/dimori-logo.png";
 import bg from "../../../images/add-bg.png";
 
 import DimoriSmartContract from "../../../artifacts/contracts/DimoriMain.sol/DimoriMain.json";
-import { contractAddress, networkDeployedTo } from "../../../utils/contracts-config";
+import {
+  contractAddress,
+  networkDeployedTo,
+} from "../../../utils/contracts-config";
 import networksMap from "../../../utils/networksMap.json";
 const client = require("ipfs-http-client");
 
@@ -171,197 +174,212 @@ const AddRental = () => {
         </div>
         <h2 class="headerText">Add your Rental</h2>
         <div className="lrContainers">
-          <Account  />
+          <Account />
         </div>
       </div>
-      <hr className="line1"/>
-      <div className="RentalContent">
-      <div className="divRentalContent" style={{ alignContent: "center" }}>
-        <table className="pure-table pure-table-horizontal marginTable">
-          <tr>
-            <td>
-              <Form.Control
-                type="text"
-                placeholder="Tên chi? (Name)"
-                onChange={(e) => {
-                  setFormInput({ ...formInput, name: e.target.value });
-                }}
-                required={true}
-              />
-            </td>
-            <td>
-              <Form.Control
-                type="text"
-                maxLength={30}
-                placeholder="Ở mô? (City)"
-                onChange={(e) => {
-                  setFormInput({ ...formInput, city: e.target.value });
-                }}
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <CustomFormControl
-                variant="standard"
-                sx={{ m: 1, minWidth: 900 }}
-              >
-                <InputLabel id="theme-standard-label">
-                  Tụi bây có chi vui (Theme)
-                </InputLabel>
-                <Select
-                  value={themeValue}
-                  onChange={(e) => {
-                    setthemeValue(e.target.value);
-                  }}
-                  required
-                  style={{ color: "wheat" }}
-                >
-                  <MenuItem value="Peace">Peace</MenuItem>
-                  <MenuItem value="Village">Village</MenuItem>
-                  <MenuItem value="Royal">Royal</MenuItem>
-                  <MenuItem value="Nature">Nature</MenuItem>
-                  <MenuItem value="Arts">Arts</MenuItem>
-                  <MenuItem value="Green">Green</MenuItem>
-                  <MenuItem value="History">History</MenuItem>
-                </Select>
-              </CustomFormControl>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <Form.Control
-                type="text"
-                maxLength={255}
-                placeholder="Ở lộ mô? (Address)"
-                onChange={(e) => {
-                  setFormInput({
-                    ...formInput,
-                    contactAddress: e.target.value,
-                  });
-                }}
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <Form.Control
-                type="text"
-                maxLength={30}
-                placeholder="Kinh độ (Longtitude)"
-                onChange={(e) => {
-                  setFormInput({ ...formInput, latitude: e.target.value });
-                }}
-              />
-            </td>
-            <td>
-              <Form.Control
-                type="text"
-                maxLength={30}
-                placeholder="Vĩ độ (Latitude)"
-                onChange={(e) => {
-                  setFormInput({ ...formInput, longitude: e.target.value });
-                }}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <Form.Control
-                as="textarea"
-                rows={5}
-                maxLength={2000}
-                placeholder="Kể coi tụi bây có chi? (Description)"
-                onChange={(e) => {
-                  setFormInput({ ...formInput, description: e.target.value });
-                }}
-              />
-            </td>
-          </tr>
-          <tr>
-          <td>
-              <CustomFormControl
-                variant="standard"
-                sx={{ minWidth: 150 }}
-              >
-                <InputLabel id="theme-standard-label">
-                  Phòng ni chứa được mấy người (max-number of this room)
-                </InputLabel>
-                <Select
-                  value={roomSizeValue}
-                  onChange={(e) => {
-                    setroomSizeValue(e.target.value);
-                  }}
-                  required
-                  style={{ color: "wheat" }}
-                >
-                  <MenuItem value="1">1</MenuItem>
-                  <MenuItem value="2">2</MenuItem>
-                  <MenuItem value="3">3</MenuItem>
-                  <MenuItem value="4">4</MenuItem>
-                  <MenuItem value="5">5</MenuItem>
-                  <MenuItem value="6">6</MenuItem>
-                  <MenuItem value="7">7</MenuItem>
-                  <MenuItem value="8">8</MenuItem>
-                  <MenuItem value="9">9</MenuItem>
-                  <MenuItem value="10">10</MenuItem>
-                  <MenuItem value="100">Thoải mái đê em êi</MenuItem>
-                </Select>
-              </CustomFormControl>
-            </td>
-            <td>
-              <Form.Control
-                type="number"
-                min={0}
-                placeholder="Một ngày trả bây mấy $ (Price)"
-                onChange={(e) =>
-                  setFormInput({ ...formInput, pricePerDay: e.target.value })
-                }
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <Form.Control
-                type="file"
-                name="file"
-                onChange={(e) => {
-                  getImage(e);
-                }}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              {imagePreview && (
-                <div style={{ textAlign: "center" }}>
-                  <img
-                    className="rounded mt-4"
-                    width="350"
-                    src={URL.createObjectURL(imagePreview)}
-                    style={{ margin: "0 15% 0 15%" }}
+      <hr className="line1" />
+      <div className="addRentalContent row">
+        <div className="row">
+          <div className="rentalContent col-8">
+            <table className="pure-table pure-table-horizontal marginTable">
+              <tr>
+                <td>
+                  <Form.Control
+                    type="text"
+                    placeholder="Tên chi? (Name)"
+                    onChange={(e) => {
+                      setFormInput({ ...formInput, name: e.target.value });
+                    }}
+                    required={true}
                   />
-                </div>
-              )}
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <div style={{ textAlign: "center" }}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  style={{ backgroundColor: "#00afd1" }}
-                  onClick={addRental}
-                >
-                  {loading ? <CircularProgress color="inherit" /> : "Add"}
-                </Button>
-              </div>
-            </td>
-          </tr>
-        </table>
+                </td>
+                <td>
+                  <Form.Control
+                    type="text"
+                    maxLength={30}
+                    placeholder="Ở mô? (City)"
+                    onChange={(e) => {
+                      setFormInput({ ...formInput, city: e.target.value });
+                    }}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <CustomFormControl
+                    variant="standard"
+                    sx={{ m: 1, minWidth: 600 }}
+                  >
+                    <InputLabel id="theme-standard-label">
+                      Tụi bây có chi vui (Theme)
+                    </InputLabel>
+                    <Select
+                      value={themeValue}
+                      onChange={(e) => {
+                        setthemeValue(e.target.value);
+                      }}
+                      required
+                      style={{ color: "wheat" }}
+                    >
+                      <MenuItem value="Peace">Peace</MenuItem>
+                      <MenuItem value="Village">Village</MenuItem>
+                      <MenuItem value="Royal">Royal</MenuItem>
+                      <MenuItem value="Nature">Nature</MenuItem>
+                      <MenuItem value="Arts">Arts</MenuItem>
+                      <MenuItem value="Green">Green</MenuItem>
+                      <MenuItem value="History">History</MenuItem>
+                    </Select>
+                  </CustomFormControl>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <Form.Control
+                    type="text"
+                    maxLength={255}
+                    placeholder="Ở lộ mô? (Address)"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        contactAddress: e.target.value,
+                      });
+                    }}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <Form.Control
+                    type="text"
+                    maxLength={30}
+                    placeholder="Kinh độ (Longtitude)"
+                    onChange={(e) => {
+                      setFormInput({ ...formInput, latitude: e.target.value });
+                    }}
+                  />
+                </td>
+                <td>
+                  <Form.Control
+                    type="text"
+                    maxLength={30}
+                    placeholder="Vĩ độ (Latitude)"
+                    onChange={(e) => {
+                      setFormInput({ ...formInput, longitude: e.target.value });
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <Form.Control
+                    as="textarea"
+                    rows={5}
+                    maxLength={2000}
+                    placeholder="Kể coi tụi bây có chi? (Description)"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        description: e.target.value,
+                      });
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <CustomFormControl variant="standard" sx={{ minWidth: 150 }}>
+                    <InputLabel id="theme-standard-label">
+                      Phòng ni chứa được mấy người (max-number of this room)
+                    </InputLabel>
+                    <Select
+                      value={roomSizeValue}
+                      onChange={(e) => {
+                        setroomSizeValue(e.target.value);
+                      }}
+                      required
+                      style={{ color: "wheat" }}
+                    >
+                      <MenuItem value="1">1</MenuItem>
+                      <MenuItem value="2">2</MenuItem>
+                      <MenuItem value="3">3</MenuItem>
+                      <MenuItem value="4">4</MenuItem>
+                      <MenuItem value="5">5</MenuItem>
+                      <MenuItem value="6">6</MenuItem>
+                      <MenuItem value="7">7</MenuItem>
+                      <MenuItem value="8">8</MenuItem>
+                      <MenuItem value="9">9</MenuItem>
+                      <MenuItem value="10">10</MenuItem>
+                      <MenuItem value="100">Thoải mái đê em êi</MenuItem>
+                    </Select>
+                  </CustomFormControl>
+                </td>
+                <td>
+                  <Form.Control
+                    type="number"
+                    min={0}
+                    placeholder="Một ngày trả bây mấy $ (Price)"
+                    onChange={(e) =>
+                      setFormInput({
+                        ...formInput,
+                        pricePerDay: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div className="col-3 detailImg">
+            <table
+              className="pure-table pure-table-horizontal"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <Form.Control
+                      type="file"
+                      name="file"
+                      onChange={(e) => {
+                        getImage(e);
+                      }}
+                      className="rounded mt-4"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {imagePreview && (
+                      <div style={{ textAlign: "center" }}>
+                        <img
+                          className="rounded mt-4"
+                          width="350"
+                          src={URL.createObjectURL(imagePreview)}
+                          style={{ margin: "0 15% 0 15%" }}
+                        />
+                      </div>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="buttonContainerCenter">
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        style={{ backgroundColor: "#00afd1" }}
+                        onClick={addRental}
+                      >
+                        {loading ? <CircularProgress color="inherit" /> : "Add"}
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@
   align-items: center;
   padding-left: 30px;
   padding-right: 5px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
 }
 
 .marginTable {
@@ -72,22 +72,16 @@ body {
   margin: 30px 0px;
 }
 
-.RentalContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.addRentalContent {
+  width: 85%;
+  margin: 0 auto;
+  background-color: rgba(200, 200, 200, 0.4);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 15px 15px;
 }
 
-.divRentalContent {
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-  align-items: center;
-  /* height: calc(100vh - 135px); */
-  width: 90vw;
-  padding-top: 30px;
-  background-color: rgb(24, 23, 23, 0.3);
-  border-radius: 10px;
+.rentalContent {
+  padding: 10px;
 }
 
 .rentalDiv {
@@ -113,36 +107,6 @@ body {
   }
 }
 
-.rentalImg {
-  height: 200px;
-  width: 300px;
-  border-radius: 20px;
-  margin-right: 20px;
-}
-
-.rentalInfo {
-  padding: 10px;
-  width: 100%;
-}
-
-.rentalDesc {
-  color: #00aed0;
-}
-
-.bottomButton {
-  margin-top: 50px;
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-
-.price {
-  display: flex;
-  justify-content: end;
-  gap: 5px;
-  color: #00aed0;
-  font-size: 12px;
-}
 
 .form-control.standard {
   background-color: #fff;
@@ -163,4 +127,20 @@ body {
 .form-control::placeholder {
   opacity: 0.9 !important;
   color: #a1eded !important;
+}
+
+.buttonContainerCenter {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding: 20px;
+}
+
+.detailImg {
+  margin-top: -10px;
+  padding: 10px;
+}
+
+.formControlStyles {
+  box-sizing: border-box;
 }

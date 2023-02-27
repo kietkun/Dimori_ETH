@@ -89,7 +89,7 @@ const YourRentals = () => {
               paddingBottom: "10%",
             }}
           >
-            <p style={{ color: "whitesmoke" }}>You have no rentals listed</p>
+            <p style={{ color: "#00aed0" }}>You have no rentals listed</p>
           </div>
         )}
         </div>
