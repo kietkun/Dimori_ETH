@@ -108,13 +108,12 @@ function Account() {
               <Modal.Title>Account Information</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <p>Wallet address : {data.account}</p>
-                <p>
-                  Your account balance :{" "}
-                  {data.balance && parseFloat(data.balance).toFixed(4)}{" "}
+                <p style={{textAlign:"center"}}>Network : {data.network} </p>
+                <p style={{textAlign:"center"}}>{data.account}</p>
+                <p style={{textAlign:"center"}}>
+                  Account Balance :{" "}
+                  {data.balance && parseFloat(data.balance).toFixed(4)}{" ETH"}
                 </p>
-                <p>Your're connect to : {data.network} </p>
-                
                 <div className="footer">
                   <Dropdown>
                     <Dropdown.Toggle

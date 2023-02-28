@@ -65,20 +65,6 @@
   height: calc(100vh - 135px);
 }
 
-.rentalsContentL {
-  display: left;
-  width: 50%;
-}
-
-.rentalsContentR {
-  display: right;
-  width: 50%;
-  height: 95%;
-  overflow: scroll;
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: rgba(0, 0, 0, 0.6) 7px 21px 21px;
-}
-
 .rentalDiv {
   display: flex;
   justify-content: center;
@@ -137,7 +123,7 @@
 .rentalInformation {
   font-size: 18px;
   background-color: rgba(200, 200, 200, 0.2);
-  box-shadow: rgba(0, 0, 0, 1) 5px 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 15px 15px;
   color: #00aed0;
   border-radius: 10px;
 }
@@ -178,13 +164,13 @@
 } */
 
 .text {
-  color: #00aed0;
+  color: #000;
   font-weight: 600;
   margin-bottom: 25px;
 }
 
 .title {
-  color: #00aed0;
+  color: #000;
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 15px;

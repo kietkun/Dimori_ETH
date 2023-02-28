@@ -1,8 +1,6 @@
 import React from "react";
 
 const RenterBookingSchedule = ({ bookingInfo }) => {
-  
-
   return (
     <>
       <div className="divScheduleImg">
@@ -10,8 +8,9 @@ const RenterBookingSchedule = ({ bookingInfo }) => {
       </div>
 
       <div className="rentalInfo">
+        <div className="rentalTitle">{bookingInfo.name.toUpperCase()}</div>
         <div className="rentalTitle">
-          {bookingInfo.name.toUpperCase()} - Booked Date :
+          Booked Date :
           {` ${bookingInfo.startDate.toLocaleString("default", {
             month: "short",
           })} ${bookingInfo.startDate.toLocaleString("default", {

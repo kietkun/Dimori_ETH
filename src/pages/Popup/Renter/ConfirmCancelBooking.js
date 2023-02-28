@@ -6,17 +6,27 @@ import "bootstrap/dist/css/bootstrap.css";
 import { ethers, utils } from "ethers";
 import { Buffer } from "buffer";
 import { Form } from "react-bootstrap";
-import { Button, CircularProgress, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@mui/material";
 
 import DimoriSmartContract from "../../../artifacts/contracts/DimoriMain.sol/DimoriMain.json";
-import { contractAddress, networkDeployedTo } from "../../../utils/contracts-config";
+import {
+  contractAddress,
+  networkDeployedTo,
+} from "../../../utils/contracts-config";
 import networksMap from "../../../utils/networksMap.json";
 
-const ConfirmCancelBooking = ({bookingInfo}) => {
+const ConfirmCancelBooking = ({ bookingInfo }) => {
   let navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const data = useSelector((state) => state.blockchain.value);
-  
+
   const confirmCancelBooking = async () => {
     if (data.network === networksMap[networkDeployedTo]) {
       if (window.ethereum !== undefined) {
@@ -33,12 +43,19 @@ const ConfirmCancelBooking = ({bookingInfo}) => {
             DimoriSmartContract.abi,
             signer
           );
-          ;
-          const listingFee = DimoriContract.callStatic.listingFee();
-          const add_tx = await DimoriContract.confirmCancelBooking(
-            parseInt(bookingInfo.id),
-            { value: listingFee }
+          
+          const totalBookingPriceUSD = Number(bookingInfo.price) * bookingInfo.bookedPeriod;
+          
+          const totalBookingPriceETH = await DimoriContract.convertFromUSD(
+            utils.parseEther(totalBookingPriceUSD.toString(), "ether")
           );
+
+          console.log(totalBookingPriceETH)
+          const add_tx = await DimoriContract.confirmCancelBooking(
+            bookingInfo.id,
+            { value: totalBookingPriceETH }
+          );
+
           await add_tx.wait();
           setLoading(false);
 
@@ -57,13 +74,18 @@ const ConfirmCancelBooking = ({bookingInfo}) => {
       );
     }
   };
-  
+
   return (
     <>
       <div className="confirmCancelBookingContent">
-        <div className="confirmCancelBookingContentL" style={{ alignItems: "center" }}>
+        <div
+          className="confirmCancelBookingContentL"
+          style={{ alignItems: "center" }}
+        >
           <h2 className="headerText">Cancel Booking</h2>
-          <p style={{textAlign:'center'}}>Are you sure to confirm cancel this booking?</p>
+          <p style={{ textAlign: "center" }}>
+            Are you sure to confirm cancel this booking?
+          </p>
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"

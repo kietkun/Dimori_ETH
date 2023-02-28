@@ -49,6 +49,7 @@ const RenterCancelledBookings = () => {
         if (_rentals.length !== 0) {
           const item = {
             id: Number(r[0]),
+            rentalId: Number(r[1]),
             name: _rentals[2],
             city: _rentals[3],
             theme: _rentals[4],
@@ -78,54 +79,6 @@ const RenterCancelledBookings = () => {
   useEffect(() => {
     getCancelledBookingsList();
   }, [data.account]);
-
-  let navigate = useNavigate();
-
-  const [loading, setLoading] = useState(false);
-
-  const [image, setImage] = useState(null);
-  let id = 0;
-  const confirmCancelBooking = async () => {
-    if (data.network === networksMap[networkDeployedTo]) {
-      if (image !== undefined && window.ethereum !== undefined) {
-        try {
-          setLoading(true);
-          const provider = new ethers.providers.Web3Provider(
-            window.ethereum,
-            "any"
-          );
-          const signer = provider.getSigner();
-
-          const DimoriContract = new ethers.Contract(
-            contractAddress,
-            DimoriSmartContract.abi,
-            signer
-          );
-          const listingFee = DimoriContract.callStatic.listingFee();
-
-          const add_tx = await DimoriContract.confirmCancelBooking(
-            parseInt(id)
-          );
-          await add_tx.wait();
-
-          setImage(null);
-          setLoading(false);
-
-          navigate("/#/renter-cancelled-bookings");
-        } catch (err) {
-          window.alert("An error has occured");
-          setLoading(false);
-          console.log(err);
-        }
-      } else {
-        window.alert("Please Install Metamask");
-      }
-    } else {
-      window.alert(
-        `Please Switch to the ${networksMap[networkDeployedTo]} network`
-      );
-    }
-  };
 
   return (
     <>

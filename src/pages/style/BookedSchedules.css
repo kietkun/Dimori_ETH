@@ -88,3 +88,18 @@ body {
   color: #00aed0;
   font-size: 12px;
 }
+
+.rentalsContentL {
+  display: left;
+  width: 50%;
+}
+
+.rentalsContentR {
+  display: right;
+  width: 50%;
+  height: 95%;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: rgba(0, 0, 0, 0.6) 7px 21px 21px;
+  border-radius: 10px;
+}

@@ -52,7 +52,9 @@ function App() {
           </Routes>
         </HashRouter>
       </div> 
-      <Footer/>
+      <div classname="footer">
+        <Footer />
+      </div>
     </>
   );
 }
