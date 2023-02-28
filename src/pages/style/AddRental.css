@@ -110,7 +110,7 @@ body {
 
 .form-control.standard {
   background-color: #fff;
-  color: #00aed0;
+  color: #000;
 }
 .MuiInputLabel-root {
   color: #fff;
@@ -118,15 +118,15 @@ body {
 
 .form-control {
   width: 100% !important;
-  background: rgba(0, 0, 0, 0.4) !important;
-  color: #00aed0 !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #000 !important;
   border-radius: 25px !important;
   border: none !important;
 }
 
 .form-control::placeholder {
   opacity: 0.9 !important;
-  color: #a1eded !important;
+  color: #00aed0 !important;
 }
 
 .buttonContainerCenter {

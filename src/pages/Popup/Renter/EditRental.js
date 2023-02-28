@@ -33,15 +33,15 @@ const projectSecret = "924de794db26653232257f0e12208ecd"; // <---------- your In
 
 const CustomFormControl = styled(FormControl)`
   && {
-    color: wheat;
+    color: #000;
   }
   .MuiInput-underline:before {
-    border-bottom-color: wheat;
-    color: wheat;
+    border-bottom-color: #000;
+    color: #000;
   }
 
   .MuiFormLabel-root.Mui-focused {
-    color: wheat;
+    color: #000;
   }
 `;
 
@@ -88,13 +88,18 @@ const EditRental = ({ rental }) => {
     pricePerDay: parseInt(rental.price),
   });
 
-  const getInitialState = () => {
+  const getInitialThemeState = () => {
     const value = formInput.theme;
     return value;
   };
 
-  const [value, setValue] = useState(getInitialState);
+  const getInitialRoomSizeState = () => {
+    const value = formInput.numberGuests;
+    return value;
+  };
 
+  const [themeValue, setThemeValue] = useState(getInitialThemeState);
+  const [roomSizeValue, setroomSizeValue] = useState(getInitialRoomSizeState);
   const getImage = async (e) => {
     e.preventDefault();
     const reader = new window.FileReader();
@@ -125,13 +130,13 @@ const EditRental = ({ rental }) => {
             parseInt(rental.id),
             formInput.name,
             formInput.city,
-            value,
+            themeValue,
             formInput.contactAddress,
             formInput.latitude,
             formInput.longitude,
             formInput.description,
             imageURI == null ? rental.imgUrl : imageURI,
-            formInput.numberGuests,
+            roomSizeValue,
             utils.parseEther(formInput.pricePerDay.toString(), "ether"),
             { value: listingFee }
           );
@@ -206,9 +211,9 @@ const EditRental = ({ rental }) => {
                         Tụi bây có chi vui (Theme)
                       </InputLabel>
                       <Select
-                        value={value}
+                        value={themeValue}
                         onChange={(e) => {
-                          setValue(e.target.value);
+                          setThemeValue(e.target.value);
                         }}
                         required
                       >
@@ -294,19 +299,34 @@ const EditRental = ({ rental }) => {
                 </tr>
                 <tr>
                   <td>
-                    <Form.Control
-                      type="number"
-                      className="formControlStyles"
-                      value={formInput.numberGuests}
-                      min={1}
-                      placeholder="Chỗ tụi bây chứa được mấy người? (Max number)"
-                      onChange={(e) =>
-                        setFormInput({
-                          ...formInput,
-                          numberGuests: Number(e.target.value),
-                        })
-                      }
-                    />
+                    <CustomFormControl
+                      variant="standard"
+                      sx={{ minWidth: 150 }}
+                    >
+                      <InputLabel id="theme-standard-label">
+                        Phòng ni chứa được mấy người (max-number of this room)
+                      </InputLabel>
+                      <Select
+                        value={roomSizeValue}
+                        onChange={(e) => {
+                          setroomSizeValue(e.target.value);
+                        }}
+                        required
+                        style={{ color: "#000" }}
+                      >
+                        <MenuItem value="1">1</MenuItem>
+                        <MenuItem value="2">2</MenuItem>
+                        <MenuItem value="3">3</MenuItem>
+                        <MenuItem value="4">4</MenuItem>
+                        <MenuItem value="5">5</MenuItem>
+                        <MenuItem value="6">6</MenuItem>
+                        <MenuItem value="7">7</MenuItem>
+                        <MenuItem value="8">8</MenuItem>
+                        <MenuItem value="9">9</MenuItem>
+                        <MenuItem value="10">10</MenuItem>
+                        <MenuItem value="100">Thoải mái đê em êi</MenuItem>
+                      </Select>
+                    </CustomFormControl>
                   </td>
                   <td>
                     <Form.Control
@@ -348,29 +368,23 @@ const EditRental = ({ rental }) => {
                 </tr>
                 <tr>
                   <td>
-                    {imagePreview == null ? (
-                      <div
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      {imagePreview == null ? (
                         <img
                           className="rounded mt-4"
                           width="350"
                           src={rental.imgUrl}
                           style={{ margin: "0 15% 0 15%", display: "block" }}
                         />
-                      </div>
-                    ) : (
-                      <div
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
+                      ) : (
                         <img
                           className="rounded mt-4"
                           width="350"
                           src={URL.createObjectURL(imagePreview)}
                           style={{ margin: "0 15% 0 15%", display: "block" }}
                         />
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </td>
                 </tr>
               </tbody>

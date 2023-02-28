@@ -35,15 +35,15 @@ const projectSecret = "924de794db26653232257f0e12208ecd"; // <---------- your In
 
 const CustomFormControl = styled(FormControl)`
   && {
-    color: wheat;
+    color: #000;
   }
   .MuiInput-underline:before {
-    border-bottom-color: wheat;
-    color: wheat;
+    border-bottom-color: #000;
+    color: #000;
   }
 
   .MuiFormLabel-root.Mui-focused {
-    color: wheat;
+    color: #000;
   }
 `;
 const auth =
@@ -220,7 +220,7 @@ const AddRental = () => {
                         setthemeValue(e.target.value);
                       }}
                       required
-                      style={{ color: "wheat" }}
+                      style={{ color: "#000" }}
                     >
                       <MenuItem value="Peace">Peace</MenuItem>
                       <MenuItem value="Village">Village</MenuItem>
@@ -299,7 +299,7 @@ const AddRental = () => {
                         setroomSizeValue(e.target.value);
                       }}
                       required
-                      style={{ color: "wheat" }}
+                      style={{ color: "#000" }}
                     >
                       <MenuItem value="1">1</MenuItem>
                       <MenuItem value="2">2</MenuItem>
@@ -352,12 +352,12 @@ const AddRental = () => {
                 <tr>
                   <td>
                     {imagePreview && (
-                      <div style={{ textAlign: "center" }}>
+                      <div style={{ display: "flex", justifyContent: "center" }}>
                         <img
                           className="rounded mt-4"
                           width="350"
                           src={URL.createObjectURL(imagePreview)}
-                          style={{ margin: "0 15% 0 15%" }}
+                          style={{ margin: "0 15% 0 15%", display: "block" }}
                         />
                       </div>
                     )}
