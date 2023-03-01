@@ -22,6 +22,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { networkDeployedTo } from "../utils/contracts-config";
 import networksMap from "../utils/networksMap.json";
 
+import Footer from "./Footer";
+
 const Home = () => {
   const data = useSelector((state) => state.blockchain.value);
 
@@ -186,6 +188,7 @@ const Home = () => {
           onClick={() => console.log(info.checkOut)}
         />
       </div>
+      <Footer />
     </>
   );
 };

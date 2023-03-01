@@ -10,17 +10,16 @@ import {
   UserCancelledBookings,
   RenterCancelledBookings,
   ConfirmCancelBooking,
-  Footer,
   RentalDetail,
   RenterBookingSchedules,
-  HomesByRenter
+  HomesByRenter,
 } from "./pages";
 import { Route, Routes, HashRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <div>
+      <div className="App">
         <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -51,9 +50,6 @@ function App() {
             />
           </Routes>
         </HashRouter>
-      </div> 
-      <div classname="footer">
-        <Footer />
       </div>
     </>
   );

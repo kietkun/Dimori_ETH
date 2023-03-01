@@ -6,9 +6,6 @@
   background-size: cover;
   z-index: -999;
 }
-.randomLocation {
-  margin-top: 15px !important;
-}
 .line1 {
   height: 100px;
   border-width: 21px;
@@ -126,5 +123,5 @@
   width: 500px;
   padding-left: 100px;
   position: fixed;
-  top: 50%;
+  top: 30%;
 }
