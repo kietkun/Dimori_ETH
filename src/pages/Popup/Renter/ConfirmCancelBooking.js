@@ -59,7 +59,7 @@ const ConfirmCancelBooking = ({ bookingInfo }) => {
           await add_tx.wait();
           setLoading(false);
 
-          navigate("/#/booked-schedules");
+          navigate("/#/your-rentals");
         } catch (err) {
           window.alert("An error has occured");
           setLoading(false);

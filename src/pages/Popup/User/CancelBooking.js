@@ -93,7 +93,7 @@ const CancelBooking = ({bookedSchedule}) => {
           setImage(null);
           setLoading(false);
 
-          navigate("/#/booked-schedules");
+          navigate("/#/user-cancelled-booking");
         } catch (err) {
           window.alert("An error has occured");
           setLoading(false);
